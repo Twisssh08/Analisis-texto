@@ -251,23 +251,12 @@ elif modo == "Archivo de texto":
             st.error(f"Error al procesar el archivo: {e}")
 
 # Información adicional
-with st.expander("📚 Información sobre el análisis"):
+with st.expander("📚 Información sobre el análisis de tu texto"):
     st.markdown("""
     ### Sobre el análisis de texto
     
     - **Sentimiento**: Varía de -1 (muy negativo) a 1 (muy positivo)
     - **Subjetividad**: Varía de 0 (muy objetivo) a 1 (muy subjetivo)
     
-    ### Requisitos mínimos
-    
-    Esta aplicación utiliza únicamente:
-    ```
-    streamlit
-    textblob
-    pandas
-    ```
     """)
 
-# Pie de página
-st.markdown("---")
-st.markdown("Desarrollado con ❤️ usando Streamlit y TextBlob")
