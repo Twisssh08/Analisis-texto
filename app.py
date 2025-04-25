@@ -25,13 +25,6 @@ Esta aplicación utiliza TextBlob para realizar un análisis básico de texto:
 - Traducción de tu texto
 """)
 
-# Barra lateral
-st.sidebar.title("Opciones")
-modo = st.sidebar.selectbox(
-    "Selecciona la manera en como vas a ingresar tu texto:",
-    ["Texto directo", "Archivo de texto (.txt)"]
-)
-
 # Función para contar palabras sin depender de NLTK
 def contar_palabras(texto):
     # Lista básica de palabras vacías en español e inglés
