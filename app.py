@@ -17,7 +17,7 @@ st.markdown(
 
 # Configuración de la página
 st.set_page_config(
-    page_title="Analizador de Texto Simple",
+    page_title="Analizador de Texto Simplee",
     page_icon="📊",
     layout="wide"
 )
