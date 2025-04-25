@@ -4,6 +4,17 @@ from textblob import TextBlob
 import re
 from googletrans import Translator
 
+st.markdown(
+    """
+    <style>
+    .stApp {
+        background-color: #A47DAB;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True 
+)
+
 # Configuración de la página
 st.set_page_config(
     page_title="Analizador de Texto Simple",
@@ -18,13 +29,14 @@ Esta aplicación utiliza TextBlob para realizar un análisis básico de texto:
 - Análisis de sentimiento y subjetividad
 - Extracción de palabras clave
 - Análisis de frecuencia de palabras
+- Traducción de tu texto
 """)
 
 # Barra lateral
 st.sidebar.title("Opciones")
 modo = st.sidebar.selectbox(
-    "Selecciona el modo de entrada:",
-    ["Texto directo", "Archivo de texto"]
+    "Selecciona la manera en como vas a ingresar tu texto:",
+    ["Texto directo", "Archivo de texto (.txt)"]
 )
 
 # Función para contar palabras sin depender de NLTK
@@ -171,13 +183,13 @@ def crear_visualizaciones(resultados):
     
     # Palabras más frecuentes usando chart de Streamlit
     with col2:
-        st.subheader("Palabras más frecuentes")
+        st.subheader("Las palabras más repetidas son:")
         if resultados["contador_palabras"]:
             palabras_top = dict(list(resultados["contador_palabras"].items())[:10])
             st.bar_chart(palabras_top)
     
     # Mostrar texto traducido
-    st.subheader("Texto Traducido")
+    st.subheader("Traducción de tu texto")
     with st.expander("Ver traducción completa"):
         col1, col2 = st.columns(2)
         with col1:
